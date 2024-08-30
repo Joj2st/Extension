@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "抖音快手视频下载器",
+  "version": "1.0.0",
+  "description": "",
+  "icons": {
+    "16": "assets/images/spider.png",
+    "32": "assets/images/spider.png",
+    "48": "assets/images/spider.png",
+    "128": "assets/images/spider.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "network.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_html": "",
+    "default_icon": {
+      "16": "assets/images/spider.png",
+      "32": "assets/images/spider.png",
+      "48": "assets/images/spider.png",
+      "128": "assets/images/spider.png"
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "windows",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
